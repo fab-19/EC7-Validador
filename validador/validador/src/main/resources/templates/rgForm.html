@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Validador de RG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Validador de RG</h2>
+    <form action="/rg" method="post">
+        <input type="text" name="rg" placeholder="Digite o RG" th:value="${rg}" required>
+        <button type="submit">Validar</button>
+    </form>
+    <p class="resultado" th:if="${resultado}" th:text="${resultado}"></p>
+</body>
+</html>

@@ -57,15 +57,11 @@ public class CpfAutomato {
                     break;
                 case 11: // Verifica o segundo dígito verificador
                     if (segundoDigitoReal != segundoDigitoCalculado) return false;
-                    estado = 12; // Estado final (CPF válido)
-                    break;
-                case 12: // Estado final (CPF válido)
-                    return true;
+                    return true; // CPF válido
                 default:
                     return false;
             }
         }
-
-        return estado == 12; // CPF só é válido se chegar ao estado final
+        return estado == 11; // CPF só é válido se chegar ao estado final
     }
 }
